@@ -15,10 +15,10 @@ spec:
         app: {{ .Values.pods.label }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-          - containerPort: {{ .Values.service.port }}
-        imagePullSecrets:
-        - name: {{ .Values.secret.name }}
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+      imagePullSecrets:
+      - name: {{ .Values.secret.name }}
