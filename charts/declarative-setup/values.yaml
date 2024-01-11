@@ -1,0 +1,38 @@
+namespace: argocd
+
+appProject:
+  name: DemoProject
+  sourceRepos:
+    - '!ssh://git@GITHUB.com:infrastructure-services/test'
+    - '!https://gitlab.com/group/**'
+    - '*'
+  destinations:
+    - namespace: '!kube-system'
+      server: '*'
+    - namespace: '*'
+      server: '!https://unknown-*'
+    - namespace: '*'
+      server: 'https://kubernetes.default.svc'
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+
+application:
+  name: App-of-apps
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  destination:
+    server: https://kubernetes.default.svc
+  project: DemoProject
+  source:
+    path: charts/applications
+    repoURL: https://github.com/cortiz2024/test_image
+    targetRevision: HEAD
+
+secret:
+  name: private-repo
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  stringData:
+    type: git
+    url: git@github.com:cortiz2024/test_image.git

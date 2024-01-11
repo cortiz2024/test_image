@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.application.name }}
+  namespace: {{ .Values.namespace }}
+  finalizers: {{ .Values.application.finalizers | toYaml | nindent 4 }}
+spec:
+  destination: {{ .Values.application.destination | toYaml | nindent 4 }}
+  project: {{ .Values.application.project }}
+  source:
+    path: {{ .Values.application.source.path }}
+    repoURL: {{ .Values.application.source.repoURL }}
+    targetRevision: {{ .Values.application.source.targetRevision }}
+  syncPolicy:
+    automated: {}

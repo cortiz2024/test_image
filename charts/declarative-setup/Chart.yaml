@@ -1,0 +1,7 @@
+apiVersion: v2
+name: Main Chart
+description: This chart contains both the project and the main ArgoCD application
+
+type: application
+
+version: 0.1.0

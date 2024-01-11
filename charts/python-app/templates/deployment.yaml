@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: App Deployment
   labels:
-    app: python-app
+    app: {{ .Values.pods.label }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: python-app
+      app: {{ .Values.pods.label }}
   template:
     metadata:
       labels:
-        app: python-app
+        app: {{ .Values.pods.label }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -20,3 +20,5 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
+        imagePullSecrets:
+        - name: {{ .Values.secret.name }}

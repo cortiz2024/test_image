@@ -4,8 +4,8 @@ project:
   name: DemoProject
 
 namespace:
-  frist: first-namespace
-  second: second-namespace
+  fristApp: firstApp-namespace
+  secondApp: secondApp-namespace
 
 spec:
   destination:
