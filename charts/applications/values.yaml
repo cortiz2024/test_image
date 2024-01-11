@@ -1,10 +1,10 @@
 env: dev
 
 project:
-  name: DemoProject
+  name: main-project
 
 namespace:
-  pythonApp: firstApp-namespace
+  pythonApp: pythonApp
 
 spec:
   destination:

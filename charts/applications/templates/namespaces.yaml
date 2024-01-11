@@ -6,4 +6,3 @@ metadata:
     name: {{ .Values.namespace.pythonApp }}
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
----
