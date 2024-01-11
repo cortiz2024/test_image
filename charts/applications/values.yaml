@@ -4,7 +4,7 @@ project:
   name: main-project
 
 namespace:
-  pythonApp: pythonApp
+  pythonApp: python-app
 
 spec:
   destination:
