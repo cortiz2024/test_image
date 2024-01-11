@@ -1,18 +1,9 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{ .Values.namespace.firstApp }}
+  name: {{ .Values.namespace.pythonApp }}
   labels:
-    name: {{ .Values.namespace.firstApp }}
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: {{ .Values.namespace.secondApp }}
-  labels:
-    name: {{ .Values.namespace.secondApp }}
+    name: {{ .Values.namespace.pythonApp }}
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
 ---

@@ -4,8 +4,7 @@ project:
   name: DemoProject
 
 namespace:
-  fristApp: firstApp-namespace
-  secondApp: secondApp-namespace
+  pythonApp: firstApp-namespace
 
 spec:
   destination:

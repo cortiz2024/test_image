@@ -6,4 +6,6 @@ metadata:
 spec:
   sourceRepos: {{ .Values.appProject.sourceRepos | toYaml | nindent 4 }}
   destinations: {{ .Values.appProject.destinations | toYaml | nindent 4 }}
-  clusterResourceWhitelist: {{ .Values.appProject.clusterResourceWhitelist | toYaml | nindent 4 }}
+  clusterResourceWhitelist:
+    - group: {{ .Values.appProject.clusterResourceWhitelist.group }}
+      kind: {{ .Values.appProject.clusterResourceWhitelist.kind }}
