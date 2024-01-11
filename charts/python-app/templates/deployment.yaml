@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: App Deployment
+  name: app-deployment
   labels:
     app: {{ .Values.pods.label }}
 spec:
