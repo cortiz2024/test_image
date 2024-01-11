@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: ghcr.io/cortiz2024/test_image/test_app
+  repository: ghcr.io/cortiz2024/test_image/app
   pullPolicy: IfNotPresent
   tag: "0.2.0"
 
