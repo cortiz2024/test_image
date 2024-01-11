@@ -10,6 +10,3 @@ __pycache__
 Dockerfile
 README.md
 LICENSE
-depot.json
-base64
-comandos.sh

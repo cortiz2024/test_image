@@ -1,0 +1,16 @@
+env: dev
+
+project:
+  name: DemoProject
+
+namespace:
+  frist: first-namespace
+  second: second-namespace
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    path: charts/python-app
+    repoURL: https://github.com/cortiz2024/test_image
+    targetRevision: HEAD

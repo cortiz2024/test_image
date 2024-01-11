@@ -1,9 +1,11 @@
-name: CI test App
+name: CI - Python App
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
 
 jobs:
   build-and-push:
@@ -14,6 +16,15 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        sparse-checkout: 'src/python-app'
+        sparse-checkout-cone-mode: false
+
+    - name: Move app files to root
+      run: |
+        shopt -s dotglob
+        mv src/python-app/* .
+        rm -rf src
 
     - name: Create release
       id: release
@@ -40,5 +51,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          ghcr.io/${{ github.repository }}/test_app:latest
-          ghcr.io/${{ github.repository }}/test_app:${{ steps.release.outputs.tag_name }}
+          ghcr.io/${{ github.repository }}/app:latest
+          ghcr.io/${{ github.repository }}/app:${{ steps.release.outputs.tag_name }}

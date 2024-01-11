@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Second-python-app-{{ .Values.env }}
+  namespace: {{ .Values.namespace.second }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: second-python-app-{{ .Values.env }}
+spec:
+  destination:
+    namespace: {{ .Values.namespace.second }}
+    server: {{ .Values.spec.destination.server }}
+  project: {{ .Values.project.name }}
+  source:
+    path: {{ .Values.spec.source.path }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    automated: {}
