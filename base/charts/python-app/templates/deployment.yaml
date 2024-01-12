@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: app-deployment-{{ .Values.environment }}
   labels:
-    app: {{ .Values.pods.label }}
+    app: {{ .Values.pods.label }}-{{ .Values.environment }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.pods.label }}
+      app: {{ .Values.pods.label }}-{{ .Values.environment }}
   template:
     metadata:
       labels:
-        app: {{ .Values.pods.label }}
+        app: {{ .Values.pods.label }}-{{ .Values.environment }}
     spec:
       containers:
       - name: {{ .Chart.Name }}
@@ -21,4 +21,4 @@ spec:
         ports:
         - containerPort: {{ .Values.service.port }}
       imagePullSecrets:
-      - name: {{ .Values.secret.name }}
+      - name: {{ .Values.secret.name }}-{{ .Values.environment }}

@@ -1,0 +1,16 @@
+environment: test
+
+project:
+  name: main-project
+
+namespace:
+  app: argocd
+  pythonApp: namespace-app
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  sourcePythonApp:
+    path: overlays/dev/python-app
+    repoURL: git@github.com:cortiz2024/repo.git
+    targetRevision: HEAD

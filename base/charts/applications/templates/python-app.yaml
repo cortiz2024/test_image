@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-app-{{ .Values.environment }}
+  namespace: {{ .Values.namespace.app }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: python-app-{{ .Values.environment }}
+spec:
+  destination:
+    namespace: {{ .Values.namespace.pythonApp }}
+    server: {{ .Values.spec.destination.server }}
+  project: {{ .Values.project.name }}-{{ .Values.environment }}
+  source:
+    path: {{ .Values.spec.sourcePythonApp.path }}
+    repoURL: {{ .Values.spec.sourcePythonApp.repoURL }}
+    targetRevision: {{ .Values.spec.sourcePythonApp.targetRevision }}
+  syncPolicy:
+    automated: {}

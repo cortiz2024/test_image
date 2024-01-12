@@ -1,5 +1,5 @@
 namespace: argocd
-
+environment: prod
 project:
   name: main-project
 

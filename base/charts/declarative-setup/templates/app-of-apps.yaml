@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.application.name }}
+  name: {{ .Values.application.name }}-{{ .Values.environment }}
   namespace: {{ .Values.namespace }}
   finalizers: {{ .Values.application.finalizers | toYaml | nindent 4 }}
 spec:
