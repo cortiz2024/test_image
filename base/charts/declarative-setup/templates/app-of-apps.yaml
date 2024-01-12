@@ -6,7 +6,7 @@ metadata:
   finalizers: {{ .Values.application.finalizers | toYaml | nindent 4 }}
 spec:
   destination: {{ .Values.application.destination | toYaml | nindent 4 }}
-  project: {{ .Values.project.name }}
+  project: {{ .Values.project.name }}-{{ .Values.environment }}
   source:
     path: {{ .Values.application.source.path }}
     repoURL: {{ .Values.application.source.repoURL }}

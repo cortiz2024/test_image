@@ -26,7 +26,7 @@ application:
   destination:
     server: https://kubernetes.default.svc
   source:
-    path: charts/applications
+    path: overlays/dev/applications
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
 
