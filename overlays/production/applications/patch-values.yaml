@@ -11,6 +11,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   sourcePythonApp:
-    path: overlays/dev/python-app
+    path: overlays/production/python-app
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
