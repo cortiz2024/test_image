@@ -9,7 +9,7 @@ metadata:
     name: python-app-{{ .Values.environment }}
 spec:
   destination:
-    namespace: {{ .Values.namespace.pythonApp }}
+    namespace: {{ .Values.namespace.pythonApp }}-{{ .Values.environment }}
     server: {{ .Values.spec.destination.server }}
   project: {{ .Values.project.name }}-{{ .Values.environment }}
   source:
