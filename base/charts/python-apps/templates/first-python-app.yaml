@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: {{ .Values.firstApp.appName }}-{{ .Values.environment }}
   namespace: argocd
-  finalizers: {{ .Values.firstApp.appName }}
+  finalizers: {{ .Values.firstApp.finalizers }}
   labels:
     name: {{ .Values.firstApp.appName }}-{{ .Values.environment }}
 spec:
