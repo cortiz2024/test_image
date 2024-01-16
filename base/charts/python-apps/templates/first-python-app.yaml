@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: {{ .Values.firstApp.appName }}-{{ .Values.environment }}
   namespace: argocd
-  finalizers: {{ .Values.firstApp.finalizers }}
+  finalizers: {{ .Values.firstApp.finalizers | toYaml | nindent 4 }}
   labels:
     name: {{ .Values.firstApp.appName }}-{{ .Values.environment }}
 spec:
