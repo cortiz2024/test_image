@@ -5,6 +5,6 @@ helmGlobals:
   chartHome: ../../../base/charts
 
 helmCharts:
-- name: apps
-  releaseName: apps-dev
+- name: apps-of-apps
+  releaseName: apps-of-apps-dev
   valuesFile: ./patch-values.yaml

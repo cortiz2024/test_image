@@ -1,7 +1,7 @@
 environment: dev
 
 appOne:
-  appName: app-of-apps-one
+  appName: python-apps
   projectName: project-one
   finalizers:
     - resources-finalizer.argocd.argoproj.io
