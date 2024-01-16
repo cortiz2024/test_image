@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - projects
+- apps-of-apps
 
 helmGlobals:
   chartHome: ../../base/charts
