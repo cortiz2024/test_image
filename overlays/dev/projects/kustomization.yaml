@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - project-two.yaml
+- project-three.yaml
 
 helmGlobals:
   chartHome: ../../../base/charts
