@@ -29,7 +29,7 @@ applications:
   apps:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
-    path: overlays/dev/apps
+    path: overlays/dev/apps-of-apps
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
 
