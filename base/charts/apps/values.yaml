@@ -11,3 +11,11 @@ appOne:
     path: overlays/test/app
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
+
+secret:
+  name: test-private-repo
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  stringData:
+    type: git
+    url: git@github.com:user/repo.git
