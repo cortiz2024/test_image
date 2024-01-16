@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - projects
 - apps-of-apps
+- python-apps
 
 helmGlobals:
   chartHome: ../../base/charts

@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: second-python-app-dev
+  name: second-python-app-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: python-apps-dev
+    server: https://kubernetes.default.svc
+  project: project-one-dev
+  source:
+    path: overlays/dev/first-python-app
+    repoURL: git@github.com:cortiz2024/test_image.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
