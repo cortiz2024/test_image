@@ -1,0 +1,18 @@
+environment: dev
+projects:
+  projectOne:
+    name: project-one
+    sourceRepos:
+      - '!ssh://git@GITHUB.com:infrastructure-services/test'
+      - '!https://gitlab.com/group/**'
+      - '*'
+    destinations:
+      - namespace: '!kube-system'
+        server: '*'
+      - namespace: '*'
+        server: '!https://unknown-*'
+      - namespace: '*'
+        server: 'https://kubernetes.default.svc'
+    clusterResourceWhitelist:
+      group: '*'
+      kind: '*'

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: MainChart
+description: Este chart crea un proyeto y 2 aplicaciones en él, la primera aplicación se encarga de desplegar el chart de proyectos y la segunda, el chart de aplicaciones de aplicaciones (app of apps)
+
+type: application
+
+version: 0.1.0

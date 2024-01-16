@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+  finalizers: {{ .Values.applications.apps.finalizers | toYaml | nindent 4 }}
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: main-project
+  source:
+    path: {{ .Values.applications.apps.path }}
+    repoURL: {{ .Values.applications.apps.repoURL }}
+    targetRevision: {{ .Values.applications.apps.targetRevision }}
+  syncPolicy:
+    automated: 
+      prune: true
+      allowEmpty: true
+      selfHeal: true

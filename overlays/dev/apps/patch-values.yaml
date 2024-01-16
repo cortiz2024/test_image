@@ -1,0 +1,13 @@
+environment: dev
+
+appOne:
+  appName: app-of-apps-one
+  projectName: project-one
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    path: overlays/dev/python-apps
+    repoURL: git@github.com:cortiz2024/test_image.git
+    targetRevision: HEAD

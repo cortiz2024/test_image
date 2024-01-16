@@ -1,0 +1,7 @@
+apiVersion: v2
+name: AppsChart
+description: Este chart contiene todas las apps que gestionarán varias apps de Argo
+
+type: application
+
+version: 0.1.0

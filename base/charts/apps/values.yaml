@@ -1,0 +1,13 @@
+environment: test
+
+appOne:
+  appName: app-of-apps-n
+  projectName: project_n
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    path: overlays/test/app
+    repoURL: git@github.com:cortiz2024/test_image.git
+    targetRevision: HEAD

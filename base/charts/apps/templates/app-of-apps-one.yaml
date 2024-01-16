@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.appOne.appName }}
+  namespace: argocd
+  finalizers: {{ .Values.appOne.finalizers | toYaml | nindent 4 }}
+spec:
+  destination: 
+    server: {{ .Values.appOne.destination.server }}
+  project: {{ .Values.appOne.projectName }}
+  source:
+    path: {{ .Values.appOne.source.path }}
+    repoURL: {{ .Values.appOne.source.repoURL }}
+    targetRevision: {{ .Values.appOne.source.targetRevision }}
+  syncPolicy:
+    automated: 
+      prune: true
+      allowEmpty: true
+      selfHeal: true

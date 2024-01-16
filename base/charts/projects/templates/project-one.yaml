@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .Values.projects.projectOne.name }}-{{ .Values.environment }}
+  namespace: argocd
+spec:
+  sourceRepos: {{ .Values.projects.projectOne.sourceRepos | toYaml | nindent 4 }}
+  destinations: {{ .Values.projects.projectOne.destinations | toYaml | nindent 4 }}
+  clusterResourceWhitelist:
+    - group: "{{ .Values.projects.projectOne.clusterResourceWhitelist.group }}"
+      kind: "{{ .Values.projects.projectOne.clusterResourceWhitelist.kind }}"

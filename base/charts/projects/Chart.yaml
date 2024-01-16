@@ -1,0 +1,7 @@
+apiVersion: v2
+name: ProjectsChart
+description: Este chart contiene todos los proyectos de argo
+
+type: application
+
+version: 0.1.0
