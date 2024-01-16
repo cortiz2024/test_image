@@ -1,4 +1,5 @@
 environment: dev
+namespace: argocd
 projects:
   projectOne:
     name: project-one
@@ -7,12 +8,5 @@ projects:
       - '!https://gitlab.com/group/**'
       - '*'
     destinations:
-      - namespace: '!kube-system'
-        server: '*'
-      - namespace: '*'
-        server: '!https://unknown-*'
       - namespace: '*'
         server: 'https://kubernetes.default.svc'
-    clusterResourceWhitelist:
-      group: '*'
-      kind: '*'

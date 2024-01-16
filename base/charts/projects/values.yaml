@@ -1,17 +1,8 @@
-namespace: argocd
-environment: test
 projects:
   projectOne:
-    name: project_n
     sourceRepos:
       - '!ssh://git@GITHUB.com:infrastructure-services/test'
-      - '!https://gitlab.com/group/**'
-      - '*'
     destinations:
-      - namespace: '!kube-system'
-        server: '*'
-      - namespace: '*'
-        server: '!https://unknown-*'
       - namespace: '*'
         server: 'https://kubernetes.default.svc'
     clusterResourceWhitelist:
