@@ -3,5 +3,4 @@ kind: Kustomization
 
 resources:
   - ../overlays/dev/
-  # - ../overlays/dev/apps-of-apps/
-  # - ../overlays/dev/first-python-app/
+  - ../overlays/production/
