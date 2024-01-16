@@ -5,6 +5,6 @@ helmGlobals:
   chartHome: ../../../base/charts
 
 helmCharts:
-- name: pyhton-apps
+- name: python-apps
   releaseName: pyhton-apps-dev
   valuesFile: ./patch-values.yaml
