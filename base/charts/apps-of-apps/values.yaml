@@ -5,7 +5,6 @@ appOne:
     server: https://kubernetes.default.svc
 
 secret:
-  name: test-private-repo
   labels:
     argocd.argoproj.io/secret-type: repository
   stringData:
