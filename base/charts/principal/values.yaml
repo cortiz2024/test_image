@@ -33,17 +33,17 @@ applications:
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
 
-applications-prod:
+applicationsprod:
   projects:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
-    path: overlays/prod/projects
+    path: overlays/production/projects
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
   apps:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
-    path: overlays/prod/apps-of-apps
+    path: overlays/production/apps-of-apps
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
 
