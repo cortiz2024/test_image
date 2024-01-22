@@ -12,9 +12,11 @@ spec:
     server: {{ .Values.firstApp.destination.server }}
   project: {{ .Values.firstApp.projectName }}-{{ .Values.environment }}
   source:
-    path: {{ .Values.firstApp.source.path }}
+    chart: {{ .Values.firstApp.source.chartName }}
     repoURL: {{ .Values.firstApp.source.repoURL }}
     targetRevision: {{ .Values.firstApp.source.targetRevision }}
+    helm:
+      releaseName: {{ .Values.firstApp.appName }}-{{ .Values.environment }}
   syncPolicy:
     automated: 
       prune: true

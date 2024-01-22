@@ -9,6 +9,6 @@ firstApp:
   destination:
     server: https://kubernetes.default.svc
   source:
-    path: overlays/dev/first-python-app
-    repoURL: git@github.com:cortiz2024/test_image.git
-    targetRevision: HEAD
+    chartName: python-app-chart
+    repoURL: oci://demodevacr.azurecr.io/helm/
+    targetRevision: 0.1.0
