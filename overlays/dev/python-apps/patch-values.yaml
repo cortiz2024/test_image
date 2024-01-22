@@ -10,5 +10,5 @@ firstApp:
     server: https://kubernetes.default.svc
   source:
     chartName: python-app-chart
-    repoURL: oci://demodevacr.azurecr.io/helm/
+    repoURL: oci://aksdevacr1.azurecr.io/helm/
     targetRevision: 0.1.0
