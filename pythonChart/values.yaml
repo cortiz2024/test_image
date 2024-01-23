@@ -1,5 +1,5 @@
 replicaCount: 3
-
+environment: test
 image:
   repository: ghcr.io/cortiz2024/demo_app/demo_app
   pullPolicy: IfNotPresent
