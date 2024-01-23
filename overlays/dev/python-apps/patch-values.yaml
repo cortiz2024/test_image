@@ -11,4 +11,4 @@ firstApp:
   source:
     chartName: python-app
     repoURL: demodevacr1.azurecr.io/helm
-    targetRevision: 0.1.0
+    targetRevision: 0.2.0
