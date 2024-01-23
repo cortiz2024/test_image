@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-  project: project-two-dev
+  project: main-project
   source:
     path: overlays/dev/python-apps
     repoURL: git@github.com:cortiz2024/test_image.git

@@ -2,7 +2,7 @@ environment: dev
 
 appOne:
   appName: python-apps
-  projectName: project-two
+  projectName: main-project
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   destination:
