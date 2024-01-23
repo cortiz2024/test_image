@@ -17,23 +17,3 @@ spec:
       prune: true
       allowEmpty: true
       selfHeal: true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: app-of-projects-prod
-  namespace: argocd
-  finalizers: {{ .Values.applicationsprod.projects.finalizers | toYaml | nindent 4 }}
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  project: main-project
-  source:
-    path: {{ .Values.applicationsprod.projects.path }}
-    repoURL: {{ .Values.applicationsprod.projects.repoURL }}
-    targetRevision: {{ .Values.applicationsprod.projects.targetRevision }}
-  syncPolicy:
-    automated: 
-      prune: true
-      allowEmpty: true
-      selfHeal: true

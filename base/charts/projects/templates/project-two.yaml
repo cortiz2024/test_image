@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-two-test
+  name: {{ .Values.projects.projectTwo.name }}-{{ .Values.environment }}
   namespace: argocd
 spec:
   clusterResourceWhitelist:

@@ -3,7 +3,7 @@ environment: prod
 
 projects:
   projectOne:
-    name: project-two
+    name: project-prod
     sourceRepos:
       - '!ssh://git@GITHUB.com:infrastructure-services/test'
     destinations:

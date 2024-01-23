@@ -1,5 +1,6 @@
 projects:
   projectOne:
+    name: project-1
     sourceRepos:
       - '!ssh://git@GITHUB.com:infrastructure-services/test'
     destinations:
@@ -8,3 +9,7 @@ projects:
     clusterResourceWhitelist:
       group: '*'
       kind: '*'
+  projectTwo:
+    name: project-2
+  projectThree:
+    name: project-3

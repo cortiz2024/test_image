@@ -3,12 +3,12 @@ environment: dev
 
 firstApp:
   appName: first-python-app
-  projectName: project-two
+  projectName: project-one
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   destination:
     server: https://kubernetes.default.svc
   source:
-    chartName: python-app-chart
-    repoURL: oci://aksdevacr1.azurecr.io/helm/
+    chartName: python-app
+    repoURL: oci://demodevacr1.azurecr.io/helm/
     targetRevision: 0.1.0
