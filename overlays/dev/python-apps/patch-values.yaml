@@ -10,5 +10,5 @@ firstApp:
     server: https://kubernetes.default.svc
   source:
     chartName: python-app
-    repoURL: demodevacr1.azurecr.io/helm
+    repoURL: ghcr.io/cortiz2024/demo_app
     targetRevision: 0.1.0
