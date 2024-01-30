@@ -11,4 +11,4 @@ firstApp:
   source:
     chartName: python-chart
     repoURL: ghcr.io/cortiz2024/demo_app
-    targetRevision: 0.4.0-dev
+    targetRevision: 0.5.0-dev
