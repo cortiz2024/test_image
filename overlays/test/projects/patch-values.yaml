@@ -1,5 +1,5 @@
 namespace: argocd
-environment: dev
+environment: test
 projects:
   projectOne:
     name: project-one

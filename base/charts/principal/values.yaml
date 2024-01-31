@@ -23,13 +23,13 @@ applications:
   projects:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
-    path: overlays/dev/projects
+    path: overlays/test/projects
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
   apps:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
-    path: overlays/dev/apps-of-apps
+    path: overlays/test/apps-of-apps
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
 
@@ -59,4 +59,4 @@ registrySecret:
     type: helm
     url: ghcr.io/cortiz2024/demo_app
     username: cortiz2024
-    password: 
+    password: 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

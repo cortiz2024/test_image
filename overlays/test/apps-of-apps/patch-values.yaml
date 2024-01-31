@@ -1,4 +1,4 @@
-environment: dev
+environment: test
 
 appOne:
   appName: python-apps
@@ -8,6 +8,6 @@ appOne:
   destination:
     server: https://kubernetes.default.svc
   source:
-    path: overlays/dev/python-apps
+    path: overlays/test/python-apps
     repoURL: git@github.com:cortiz2024/test_image.git
     targetRevision: HEAD
